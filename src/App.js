@@ -1,11 +1,12 @@
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
+import { cashReducer } from './store/cashReducer'
 
 function App() {
     
     const dispatch = useDispatch()
-    const cash = useSelector(state => state.cash)
+    const cash = useSelector(state => state.cashReducer.cash)
     
     const [cashInput, setCashInput] = useState(0)
     
@@ -25,7 +26,7 @@ function App() {
                 type="text"
                 placeholder={ 'введите сумму' }
                 onChange={ (e) => setCashInput(e.target.value) }
-                value={cashInput}
+                value={ cashInput }
             />
         </div>
     )
